@@ -1,1166 +1,1209 @@
-OFE v0.1 — Opportunity Formation Equation
+# Opportunity Formation Theory (OFE)
 
-«Modelo inicial para análise e formação de oportunidades»
+> **Estado do estudo — outubro de 2026**
 
-Versão: 0.1
-Status: Modelo conceitual inicial
-Tipo: Framework matemático / análise de mercado / modelagem de oportunidades
+A **Opportunity Formation Theory (OFE)** é uma investigação sobre como oportunidades surgem, desaparecem e mudam de potencial a partir da interação entre uma **ideia/projeto**, um **contexto** e o **momento** em que essa interação ocorre.
 
----
+A proposta não é criar apenas um método para dar notas a ideias.
 
-1. Objetivo
+O objetivo mais profundo é construir uma explicação para um fenômeno:
 
-A Opportunity Formation Equation (OFE) é um modelo destinado a analisar por que determinadas ideias ou projetos possuem maior potencial de sucesso em determinados contextos e momentos.
+> **Por que a mesma ideia pode ser irrelevante em uma situação, promissora em outra e extremamente valiosa em uma terceira?**
 
-O objetivo não é simplesmente identificar tendências.
+A formulação que permanece como núcleo do estudo é:
 
-O objetivo é tentar descobrir os mecanismos recorrentes que fazem uma ideia prosperar, considerando:
+```text
+OFE(I, C, t) = f(I, C, t)
+```
 
-- características da ideia;
-- contexto;
-- momento;
-- mercado;
-- competição;
-- saturação;
-- mecanismos de crescimento;
-- mecanismos de sucesso;
-- capacidade de execução;
-- restrições do criador.
-
-A hipótese fundamental é:
-
-$$
-P(S) = f(I,C,t,E)
-$$
-
-Onde:
-
-Símbolo| Significado
-$S$| Sucesso
-$I$| Características da ideia
-$C$| Contexto
-$t$| Momento
-$E$| Execução
-
-Portanto:
-
-$$
-OFE(I,C,t,E)=\text{Potencial de oportunidade}
-$$
-
-A OFE não pretende prever deterministicamente o sucesso.
-
-Ela pretende estimar quão favoráveis são as condições para uma determinada oportunidade.
+Mas, ao longo da investigação, o significado de `I`, `C` e `t` tornou-se muito mais sofisticado do que a formulação inicial sugere.
 
 ---
 
-2. Estrutura geral
+# 1. A ideia central
 
-A primeira arquitetura da OFE é:
+A hipótese central da OFE é que uma oportunidade não deve ser tratada simplesmente como uma propriedade que uma ideia **possui**.
 
-$$
-OFE =
-\frac{
-A \cdot D \cdot R \cdot M \cdot T \cdot W \cdot G \cdot E
-}{
-S \cdot K \cdot F \cdot B
-}
-$$
+Ela pode ser uma propriedade que **surge da relação** entre:
 
-Onde:
-
-Símbolo| Componente
-$A$| Atratividade
-$D$| Descoberta
-$R$| Retenção
-$M$| Mercado
-$T$| Timing
-$W$| Wave Factor
-$G$| Growth Mechanism
-$E$| Execução
-$S$| Saturação
-$K$| Competição
-$F$| Fricção
-$B$| Barreiras
-
-Essa fórmula é arquitetural, não uma equação empiricamente validada.
-
-Os pesos e relações reais ainda precisam ser descobertos.
-
----
-
-3. Forma estatística
-
-Para futura implementação computacional, uma forma mais apropriada é utilizar uma função logarítmica:
-
-$$
-\ln(OFE)
-
-\sum_i w_iX_i
-
-\sum_j v_jY_j
-$$
-
-e:
-
-$$
-OFE =
-e^{\sum_i w_iX_i-\sum_j v_jY_j}
-$$
-
-Onde:
-
-- $X_i$ = variáveis positivas;
-- $Y_j$ = variáveis negativas;
-- $w_i$ = pesos das variáveis positivas;
-- $v_j$ = pesos das variáveis negativas.
-
-Inicialmente:
-
-$$
-w_i,v_j \geq 0
-$$
-
-Os pesos não são considerados verdadeiros na v0.1.
-
-Eles deverão ser estimados posteriormente utilizando dados reais.
-
----
-
-4. A — Atratividade
-
-A mede o quanto uma ideia possui características capazes de gerar interesse.
-
-$$
-A=f(N,U,C_l,X)
-$$
-
-Onde:
-
-Variável| Significado
-$N$| Novidade
-$U$| Utilidade
-$C_l$| Clareza
-$X$| Experiência
-
----
-
-4.1 N — Novidade
-
-$$
-N=f(N_p,N_c,N_a)
-$$
-
-Onde:
-
-- $N_p$ = novidade do produto;
-- $N_c$ = novidade da combinação;
-- $N_a$ = novidade da aplicação.
-
-Novidade não significa necessariamente invenção absoluta.
-
-Uma combinação nova de tecnologias existentes também pode possuir alto $N$.
-
----
-
-4.2 U — Utilidade
-
-$$
-U=f(P_s,I_m,F_r)
-$$
-
-Onde:
-
-- $P_s$ = intensidade do problema solucionado;
-- $I_m$ = impacto da solução;
-- $F_r$ = frequência do problema.
-
----
-
-4.3 $C_l$ — Clareza
-
-Uma aproximação inicial:
-
-$$
-C_l=\frac{1}{T_{ent}}
-$$
-
-Onde:
-
-- $T_{ent}$ = tempo necessário para compreender a proposta.
-
-Quanto menor o tempo necessário para compreender a ideia, maior a clareza.
-
----
-
-4.4 X — Experiência
-
-Especialmente importante para entretenimento e jogos.
-
-$$
-X=f(D_v,E_m,S_p)
-$$
-
-Onde:
-
-- $D_v$ = diversão;
-- $E_m$ = emoção;
-- $S_p$ = surpresa.
-
----
-
-5. D — Discoverability / Descoberta
-
-Mede a capacidade potencial de uma ideia ser encontrada.
-
-$$
-D=f(V_s,C_h,A_c)
-$$
-
-Onde:
-
-- $V_s$ = visibilidade potencial;
-- $C_h$ = compatibilidade com canais;
-- $A_c$ = acessibilidade ao usuário.
-
-É importante separar:
-
-$$
-D_{potencial}
-$$
-
-de:
-
-$$
-D_{real}
-$$
-
-Uma ideia pode possuir alta capacidade de descoberta, mas baixa distribuição efetiva.
-
----
-
-6. R — Retenção
-
-Mede a capacidade de transformar experimentação em utilização recorrente.
-
-$$
-R=f(R_1,R_7,R_{30},L)
-$$
-
-Onde:
-
-- $R_1$ = retenção de curto prazo;
-- $R_7$ = retenção de médio prazo;
-- $R_{30}$ = retenção de longo prazo;
-- $L$ = força dos loops de utilização.
-
-Uma distinção fundamental:
-
-$$
-\text{Viralidade} \neq \text{Retenção}
-$$
-
-Uma ideia pode gerar grande quantidade de experimentações sem produzir utilização recorrente.
-
----
-
-7. M — Mercado
-
-$$
-M=f(TAM,SAM,SOM,G_m,F_r)
-$$
-
-Onde:
-
-Variável| Significado
-$TAM$| Total Addressable Market
-$SAM$| Serviceable Available Market
-$SOM$| Serviceable Obtainable Market
-$G_m$| Crescimento do mercado
-$F_r$| Frequência da necessidade
-
-Uma aproximação inicial:
-
-$$
-M \propto TAM \cdot G_m \cdot F_r
-$$
-
----
-
-8. T — Timing
-
-Mede a adequação temporal da ideia.
-
-$$
-T=f(T_c,T_t,T_p,T_e)
-$$
-
-Onde:
-
-- $T_c$ = maturidade tecnológica;
-- $T_t$ = tendência e comportamento atual;
-- $T_p$ = condições das plataformas;
-- $T_e$ = condições econômicas.
-
-Uma mesma ideia pode possuir:
-
-$$
-OFE(I,C,t_1) \ll OFE(I,C,t_2)
-$$
-
-mesmo permanecendo essencialmente igual.
-
-Isso representa a importância do timing.
-
----
-
-9. W — Wave Factor
-
-O Wave Factor representa o estágio de uma dinâmica ou tendência.
-
-$$
-W=f(E_x,C_p,S_t,D_f)
-$$
-
-Onde:
-
-- $E_x$ = intensidade da explosão;
-- $C_p$ = pressão de cópia;
-- $S_t$ = estágio atual;
-- $D_f$ = direção/fase da dinâmica.
-
-Estágios da onda
-
-W1 → Emergência
-W2 → Descoberta
-W3 → Explosão
-W4 → Imitação
-W5 → Comoditização
-W6 → Consolidação
-
-O estágio não precisa ser tratado como uma escala linear.
-
----
-
-10. G — Growth Mechanism
-
-Mede como o produto consegue crescer.
-
-$$
-G=f(G_s,G_c,G_n,G_a,G_l)
-$$
-
-Onde:
-
-- $G_s$ = crescimento por busca;
-- $G_c$ = crescimento por compartilhamento;
-- $G_n$ = crescimento por rede;
-- $G_a$ = crescimento algorítmico;
-- $G_l$ = crescimento por loops.
-
-Exemplos
-
-Busca
-
-Usuário
-   ↓
-Busca
-   ↓
-Produto
-
-Compartilhamento
-
-Usuário
-   ↓
-Experiência
-   ↓
-Compartilhamento
-   ↓
-Novo usuário
-
-Conteúdo
-
-Produto
-   ↓
-Conteúdo
-   ↓
-Audiência
-   ↓
-Novos usuários
-
-Rede
-
-Mais usuários
-      ↓
-Maior valor
-      ↓
-Mais usuários
-
-Loop
-
-Uso
- ↓
-Resultado
- ↓
-Recompensa
- ↓
-Novo uso
-
----
-
-11. E — Execução
-
-$$
-E=f(H,T_d,C_q,D_x)
-$$
-
-Onde:
-
-- $H$ = capacidade/habilidade disponível;
-- $T_d$ = tempo disponível;
-- $C_q$ = qualidade de execução possível;
-- $D_x$ = capacidade de distribuição.
-
-A oportunidade precisa ser avaliada considerando a capacidade real do criador.
-
----
-
-12. S — Saturação
-
-$$
-S=f(N_c,D_c,Q_c)
-$$
-
-Onde:
-
-- $N_c$ = número de concorrentes;
-- $D_c$ = densidade de concorrentes;
-- $Q_c$ = qualidade média dos concorrentes.
-
-Saturação não é simplesmente:
-
-$$
-S=N_c
-$$
-
-Quantidade de concorrentes é apenas uma parte do fenômeno.
-
----
-
-13. CP — Copy Pressure
-
-Uma variável específica para estudar ondas de cópia.
-
-$$
-CP=
-\frac{N_{copies}}{N_{success}}
-$$
-
-Onde:
-
-- $N_{copies}$ = número de cópias/imitadores;
-- $N_{success}$ = número de sucessos relevantes.
-
-Também podemos medir a velocidade de cópia:
-
-$$
-CP_v=
-\frac{N_{copies}}{\Delta t}
-$$
-
-Onde:
-
-- $\Delta t$ = tempo desde o surgimento do fenômeno original.
-
-$CP$ mede a quantidade de cópias produzida.
-
-$CP_v$ mede a velocidade com que elas aparecem.
-
----
-
-14. K — Competição
-
-$$
-K=f(N_k,Q_k,I_k,D_k)
-$$
-
-Onde:
-
-- $N_k$ = número de concorrentes;
-- $Q_k$ = qualidade dos concorrentes;
-- $I_k$ = intensidade competitiva;
-- $D_k$ = diferenciação existente.
-
-A quantidade de concorrentes não é suficiente para medir competição.
-
----
-
-15. F — Fricção
-
-Mede a dificuldade prática de transformar uma oportunidade em produto.
-
-$$
-F=f(T_d,C_d,T_x,A_p)
-$$
-
-Onde:
-
-- $T_d$ = tempo de desenvolvimento;
-- $C_d$ = custo;
-- $T_x$ = dificuldade técnica;
-- $A_p$ = atrito de aquisição.
-
----
-
-16. B — Barreiras
-
-Fricção e barreira são conceitos diferentes.
-
-«Fricção: difícil fazer.»
-
-«Barreira: difícil para concorrentes reproduzirem.»
-
-$$
-B=f(P_t,E_n,D_a,N_d)
-$$
-
-Onde:
-
-- $P_t$ = propriedade/tecnologia diferenciada;
-- $E_n$ = efeitos de rede;
-- $D_a$ = dificuldade de aquisição;
-- $N_d$ = necessidade de dados ou infraestrutura exclusiva.
-
----
-
-17. MSE — Mechanism of Success Extraction
-
-O MSE é um subsistema da OFE destinado a identificar o mecanismo real por trás de um sucesso.
-
-Considere:
-
-$$
-I={x_1,x_2,x_3,\ldots,x_n}
-$$
-
-O objetivo é encontrar um subconjunto mínimo:
-
-$$
-MSE(I)={x_i,x_j,\ldots}
-$$
-
-capaz de explicar uma parcela significativa do comportamento de sucesso.
-
-Uma condição desejada:
-
-$$
-P(S|MSE)\gg P(S|X_{aleatório})
-$$
-
-O MSE tenta separar:
-
-Características observáveis
-          ↓
-Mecanismos funcionais
-          ↓
-Mecanismos de crescimento
-          ↓
-Mecanismos de sucesso
-
----
-
-18. Característica vs. mecanismo
-
-Uma característica pode ser:
-
-Câmera isométrica
-
-Um mecanismo pode ser:
-
-Experiência inesperada
+```text
+IDEIA / PROJETO
+        +
+CONTEXTO
+        +
+MOMENTO
         ↓
-Reação emocional
+     INTERAÇÃO
         ↓
-Compartilhamento
-        ↓
-Descoberta
-        ↓
-Novo usuário
+POTENCIAL DE OPORTUNIDADE
+```
 
-A característica pode ser copiada.
+Isso produz uma mudança fundamental de perspectiva.
 
-O mecanismo é o que precisa ser investigado.
+Em vez de perguntar apenas:
 
----
+```text
+"Essa ideia é boa?"
+```
 
-19. Modelo de propagação
+a teoria pergunta:
 
-Modelo simplificado:
+```text
+"Em quais condições essa ideia possui potencial de oportunidade?"
+```
 
-$$
-V_{t+1}=V_t+D_t+S_t+N_t
-$$
-
-Onde:
-
-- $V_t$ = usuários/atenção no momento $t$;
-- $D_t$ = descoberta;
-- $S_t$ = compartilhamento;
-- $N_t$ = efeitos de rede.
-
-Modelo mais completo:
-
-$$
-V_{t+1}
-
-V_t(1+r_s+r_n+r_a)-d_t
-$$
-
-Onde:
-
-- $r_s$ = taxa de compartilhamento;
-- $r_n$ = efeito de rede;
-- $r_a$ = amplificação algorítmica;
-- $d_t$ = perda de atenção.
+Essa mudança é o ponto de partida de praticamente todo o desenvolvimento posterior da teoria.
 
 ---
 
-20. Modelo de onda
+# 2. A formulação original
 
-Considere:
+A primeira forma do modelo era:
 
-$$
-A_t=\text{atenção disponível}
-$$
+```text
+OFE(I, C, t) = f(I, C, t)
+```
 
-e:
+com:
 
-$$
-P_t=\text{produtos tentando capturar essa atenção}
-$$
+```text
+I = características da ideia/projeto
+C = contexto
+t = momento
+OFE = potencial de oportunidade
+f = relação entre essas dimensões
+```
 
-Define-se:
+A fórmula era propositalmente abstrata.
 
-$$
-\rho_t=\frac{P_t}{A_t}
-$$
+Ela não dizia ainda **como** calcular a oportunidade.
 
-$\rho_t$ representa a pressão competitiva sobre a atenção.
+Seu objetivo era estabelecer a estrutura mínima do problema:
 
-Quando:
-
-$$
-\rho_t\uparrow
-$$
-
-torna-se progressivamente mais difícil capturar atenção simplesmente reproduzindo uma tendência.
+> Uma oportunidade depende simultaneamente do que está sendo proposto, das condições em que isso existe e do momento considerado.
 
 ---
 
-21. DS — Densidade de Sucesso
+# 3. A principal mudança conceitual: as variáveis não são simples
 
-Uma das variáveis fundamentais:
+Uma das descobertas mais importantes do estudo foi perceber que tratar `I` ou `C` como variáveis únicas e simples é uma simplificação excessiva.
 
-$$
-DS=
-\frac{N_{success}}{N_{attempts}}
-$$
+Uma ideia não possui uma única característica.
 
-Onde:
-
-- $N_{success}$ = número de projetos que atingiram determinado critério de sucesso;
-- $N_{attempts}$ = número total de tentativas.
-
-O critério de sucesso deve ser definido conforme o domínio.
-
-Jogos
-
-$$
-DS_g=
-\frac{\text{jogos que atingiram X jogadores}}
-{\text{jogos lançados}}
-$$
-
-SaaS
-
-$$
-DS_s=
-\frac{\text{produtos que atingiram X usuários}}
-{\text{produtos lançados}}
-$$
-
-Aplicativos
-
-$$
-DS_a=
-\frac{\text{apps que atingiram X downloads}}
-{\text{apps lançados}}
-$$
-
----
-
-22. SR — Sucesso Relativo
-
-$$
-SR=
-\frac{Resultado}{Tentativas}
-$$
-
-Quantidade absoluta de sucessos não é suficiente.
-
-É necessário considerar quantas tentativas existiram para produzir esses sucessos.
-
-Um mercado pode apresentar:
-
-Resultado alto
-+
-SR baixo
-
-Isso caracteriza uma categoria potencialmente grande, mas altamente competitiva.
-
----
-
-23. O* — Oportunidade Ajustada
-
-Formulação inicial:
-
-$$
-O^*=OFE\cdot DS\cdot M
-$$
-
-Onde:
-
-- $OFE$ = potencial estrutural;
-- $DS$ = densidade de sucesso;
-- $M$ = tamanho/potencial do mercado.
-
-Essa fórmula ainda é experimental.
-
----
-
-24. U_c — Incerteza
-
-Nenhuma análise deve tratar dados incompletos como certeza.
-
-$$
-U_c=1-C_f
-$$
-
-Onde:
-
-- $C_f$ = confiança dos dados;
-- $U_c$ = incerteza.
-
-A saída deve ser representada como:
-
-$$
-(OFE,U_c)
-$$
-
-e não simplesmente:
-
-$$
-OFE
-$$
-
-Uma oportunidade com alto potencial e alta incerteza é diferente de uma oportunidade com alto potencial e alta confiança.
-
----
-
-25. Sensibilidade
-
-Considere:
-
-$$
-OFE=f(x_1,x_2,\ldots,x_n)
-$$
-
-A sensibilidade de uma variável pode ser representada por:
-
-$$
-Sens(x_i)=
-\frac{\partial OFE}{\partial x_i}
-$$
-
-A pergunta é:
-
-«Qual variável altera mais o resultado?»
-
-Exemplo:
-
-$$
-Sens(R)\gg Sens(N)
-$$
-
-indicaria que retenção possui maior impacto marginal no modelo do que novidade.
-
----
-
-26. Otimização da ideia
-
-Considere:
-
-$$
-I={x_1,x_2,\ldots,x_n}
-$$
-
-Procuramos:
-
-$$
-I^*=
-\arg\max_I OFE(I,C,t)
-$$
-
-sujeito às restrições:
-
-$$
-Custo(I)\leq C_{max}
-$$
-
-$$
-Tempo(I)\leq T_{max}
-$$
-
-$$
-Complexidade(I)\leq X_{max}
-$$
-
-$$
-Recursos(I)\leq R_{max}
-$$
-
-A pergunta passa de:
-
-«"Essa ideia é boa?"»
-
-para:
-
-«"Qual versão dessa ideia possui maior oportunidade dentro das minhas restrições?"»
-
----
-
-27. Função de oportunidade
-
-Formulação conceitual completa:
-
-$$
-OFE(I,C,t)=
-F[A,D,R,M,T,W,G,E,S,K,F,B,U_c]
-$$
-
-Uma implementação inicial aproximada:
-
-$$
-\ln(OFE)=
-w_AA+
-w_DD+
-w_RR+
-w_MM+
-w_TT+
-w_WW+
-w_GG+
-w_EE
-
-v_SS-
-v_KK-
-v_FF-
-v_BB
-$$
-
-Com:
-
-$$
-w_i\geq0
-$$
-
-e:
-
-$$
-v_i\geq0
-$$
-
-Os pesos não devem ser considerados verdadeiros na v0.1.
-
-Eles deverão ser estimados utilizando dados históricos.
-
----
-
-28. Objetivo científico
-
-A OFE não deve assumir antecipadamente que determinada variável é causal.
-
-Para cada variável $X_i$, devemos investigar:
-
-$$
-X_i\rightarrow S?
-$$
-
-e não apenas:
-
-$$
-Corr(X_i,S)>0
-$$
-
-O objetivo é distinguir:
-
-Correlação
-   ↓
-Hipótese
-   ↓
-Teste
-   ↓
-Mecanismo
-   ↓
-Evidência
-
-A existência de correlação não prova que uma variável causa sucesso.
-
----
-
-29. Estrutura do sistema
-
-flowchart TD
-    I[IDEIA] --> CH[CARACTERÍSTICAS]
-    C[CONTEXTO] --> W[ANÁLISE DA ONDA]
-    T[MOMENTO] --> W
-
-    CH --> A[ATRATIVIDADE]
-    CH --> G[GROWTH MECHANISM]
-    CH --> E[EXECUÇÃO]
-
-    W --> S[SATURAÇÃO]
-    W --> CP[PRESSÃO DE CÓPIA]
-
-    C --> M[MERCADO]
-    C --> K[COMPETIÇÃO]
-    C --> TMG[TIMING]
-
-    A --> MSE[MSE<br/>EXTRAÇÃO DO MECANISMO]
-    G --> MSE
-    W --> MSE
-
-    MSE --> OFE[OFE]
-    M --> OFE
-    K --> OFE
-    S --> OFE
-    TMG --> OFE
-    E --> OFE
-
-    OFE --> OPT[OTIMIZAÇÃO DA IDEIA]
-    OPT --> I2[IDEIA OTIMIZADA]
-
----
-
-30. Cinco perguntas fundamentais
-
-A OFE procura responder:
-
-1. Existe demanda?
-
-Variável principal:
-
-$$
-M
-$$
-
-2. Existe motivo para alguém se importar?
-
-Variável principal:
-
-$$
-A
-$$
-
-3. Existe mecanismo para crescer?
-
-Variável principal:
-
-$$
-G
-$$
-
-4. O momento é favorável?
-
-Variáveis principais:
-
-$$
-T,W
-$$
-
-5. Existe espaço para entrar?
-
-Variáveis principais:
-
-$$
-S,K,B,F
-$$
-
----
-
-31. Entrada e saída do sistema
-
-A entrada futura da OFE deverá ser:
-
-$$
-Input=(I,C,t,R_{user})
-$$
-
-Onde:
-
-- $I$ = ideia;
-- $C$ = contexto;
-- $t$ = momento;
-- $R_{user}$ = restrições do criador.
-
-A saída desejada:
-
-$$
-Output=
-{O,MSE,W,Risk,U_c,Sensitivity,I^*}
-$$
-
-Onde:
-
-Variável| Significado
-$O$| Potencial de oportunidade
-$MSE$| Mecanismo de sucesso identificado
-$W$| Estágio da onda
-$Risk$| Riscos
-$U_c$| Incerteza
-$Sensitivity$| Variáveis críticas
-$I^*$| Versão otimizada da ideia
-
----
-
-32. Princípio central
-
-«A OFE não deve tentar prever qual será a próxima moda.»
-
-Seu objetivo é descobrir:
-
-«Quais mecanismos fazem determinadas ideias prosperarem em determinados contextos?»
-
-A formulação conceitual central é:
-
-$$
-\boxed{
-Ideia + Contexto + Timing + Mecanismo
-\rightarrow
-Oportunidade
-}
-$$
-
----
-
-33. Hipótese fundamental da OFE
-
-Uma ideia isolada não possui um valor de oportunidade fixo.
-
-O valor depende do contexto:
-
-$$
-O(I,C_1,t_1)\neq O(I,C_2,t_2)
-$$
-
-Portanto:
-
-«Uma ideia pode ser ruim em um contexto e extremamente oportuna em outro sem que a ideia em si tenha mudado.»
-
----
-
-34. Princípio de generalização
-
-A OFE deve tentar identificar estruturas que possam aparecer em diferentes domínios.
-
-Possíveis domínios:
-
-Jogos
-Sites
-SaaS
-Aplicativos
-IA
-Ferramentas para desenvolvedores
-Creator Economy
-Automação
-Produtos digitais
-Serviços
-
-A hipótese é que determinados mecanismos possam aparecer em vários desses mercados.
+Ela possui uma estrutura.
 
 Por exemplo:
 
-Novidade
-+
-Baixa fricção
-+
-Distribuição eficiente
-+
-Loop de compartilhamento
+```text
+I = {
+    problema,
+    benefício,
+    custo,
+    complexidade,
+    viabilidade,
+    diferenciação,
+    recursos,
+    público,
+    escalabilidade,
+    distribuição,
+    ...
+}
+```
 
-pode ser uma estrutura observável em diferentes categorias, mesmo quando os produtos são completamente diferentes.
+O contexto também possui uma estrutura:
 
----
+```text
+C = {
+    demanda,
+    tecnologia,
+    concorrência,
+    legislação,
+    cultura,
+    infraestrutura,
+    recursos,
+    comportamento,
+    economia,
+    localização,
+    distribuição,
+    ...
+}
+```
 
-35. Ciclo de evolução da OFE
+Portanto:
 
-flowchart LR
-    H[Hipótese] --> D[Dados]
-    D --> A[Análise]
-    A --> T[Teste]
-    T --> R[Resultado]
-    R --> U[Atualização do modelo]
-    U --> H
+```text
+I ≠ uma variável simples
+C ≠ uma variável simples
+```
 
-A OFE deve ser tratada como um modelo evolutivo.
+A forma mais fiel de interpretar a equação passou a ser:
 
-Versões futuras podem:
+```text
+OFE(I, C, t) = f(I, C, t)
 
-- remover variáveis;
-- adicionar variáveis;
-- alterar subfórmulas;
-- alterar pesos;
-- alterar definições;
-- descobrir novas relações;
-- eliminar hipóteses incorretas.
+I = estrutura de características da ideia
+C = estrutura de características do contexto
+t = estado temporal relevante
+```
 
----
+Isso foi mais do que uma mudança de notação.
 
-36. Status da versão
-
-Nome: OFE — Opportunity Formation Equation
-
-Versão: v0.1
-
-Natureza: modelo conceitual inicial.
-
-Validação: ainda não realizada.
-
-Pesos: hipotéticos/desconhecidos.
-
-Causalidade: não estabelecida.
-
-Objetivo da próxima versão: testar as variáveis e mecanismos utilizando dados reais.
-
----
-
-37. Regra de evolução
-
-A próxima versão não deve simplesmente adicionar complexidade.
-
-Uma variável só deve permanecer no modelo se houver evidência de que ela fornece informação útil.
-
-Da mesma forma:
-
-«Uma variável aparentemente importante pode ser removida se os dados mostrarem que ela não acrescenta poder explicativo.»
-
-A complexidade da OFE deve crescer apenas quando aumentar sua capacidade de explicar ou prever fenômenos.
+Foi a percepção de que o modelo pode ser **hierárquico e composicional**.
 
 ---
 
-OFE v0.1
+# 4. Uma variável pode conter outras variáveis
 
-Opportunity Formation Equation
+O avanço seguinte foi ainda mais importante.
 
-«Não prever a próxima tendência.
+Se `C` representa o contexto, não existe motivo para que ele seja apenas:
 
-Descobrir a estrutura que transforma uma ideia em uma oportunidade dentro de um contexto.»
+```text
+C = {c1, c2, c3, ...}
+```
+
+Ele também pode conter relações e estruturas internas:
+
+```text
+C = g(c1, c2, c3, ..., cn)
+```
+
+Por exemplo:
+
+```text
+mercado = g(tamanho, demanda, renda, concorrência)
+
+tecnologia = h(maturidade, custo, disponibilidade)
+
+regulação = k(restrições, permissões, exigências)
+```
+
+Então:
+
+```text
+C = {
+    mercado = g(...),
+    tecnologia = h(...),
+    regulação = k(...),
+    ...
+}
+```
+
+O mesmo raciocínio pode ser aplicado à ideia:
+
+```text
+I = g(i1, i2, i3, ..., in)
+```
+
+Essa descoberta/consolidação muda a natureza do modelo.
+
+A OFE não precisa ser uma fórmula plana com poucas variáveis.
+
+Ela pode ser uma **estrutura de estruturas**.
+
+---
+
+# 5. O contexto deixou de ser apenas "ambiente"
+
+No começo, "contexto" poderia parecer apenas o conjunto de condições externas à ideia.
+
+Hoje essa interpretação é insuficiente.
+
+O contexto é tratado como uma parte ativa da formação da oportunidade.
+
+Ele pode:
+
+```text
+aumentar o potencial
+reduzir o potencial
+criar novas possibilidades
+eliminar possibilidades
+alterar custos
+alterar demanda
+alterar concorrência
+alterar viabilidade
+alterar a forma de distribuição
+```
+
+Isso significa que uma mudança contextual pode modificar o valor de oportunidade de uma ideia **sem que a ideia em si mude**.
+
+Exemplo:
+
+```text
+MESMA IDEIA
+
+Contexto A → baixo potencial
+Contexto B → potencial médio
+Contexto C → alto potencial
+```
+
+Esse comportamento é uma das razões pelas quais uma avaliação puramente intrínseca de ideias é considerada insuficiente pela teoria.
+
+---
+
+# 6. O tempo também não é apenas uma data
+
+Outro resultado conceitual importante foi a evolução da interpretação de `t`.
+
+Inicialmente:
+
+```text
+t = momento
+```
+
+Mas "momento" não deve ser entendido apenas como uma data no calendário.
+
+Uma interpretação mais poderosa é:
+
+```text
+t = estado temporal relevante do sistema
+```
+
+Ou seja, o que importa é o conjunto de condições existentes naquele momento.
+
+Por exemplo:
+
+```text
+t1 → tecnologia cara
+
+t2 → tecnologia acessível
+
+t3 → mudança de comportamento
+
+t4 → nova regulamentação
+
+t5 → mercado saturado
+```
+
+Assim:
+
+```text
+OFE(I, C, t1)
+```
+
+pode ser muito diferente de:
+
+```text
+OFE(I, C, t2)
+```
+
+mesmo quando a ideia permanece essencialmente a mesma.
+
+A teoria, portanto, passou a admitir naturalmente uma representação dinâmica:
+
+```text
+C(t)
+I(t)
+OFE(t)
+```
+
+---
+
+# 7. A descoberta mais importante: oportunidade é relacional
+
+O resultado conceitual mais forte do estudo até agora pode ser resumido assim:
+
+> **O potencial de oportunidade é mais bem tratado como uma propriedade relacional do que como uma propriedade intrínseca da ideia.**
+
+Consequentemente:
+
+```text
+"boa ideia" ≠ "boa oportunidade" universalmente
+```
+
+Uma ideia pode ter:
+
+```text
+boa qualidade + contexto ruim
+→ baixo potencial
+```
+
+ou:
+
+```text
+qualidade moderada + contexto excepcional
+→ alto potencial
+```
+
+ou:
+
+```text
+boa qualidade + contexto favorável + momento adequado
+→ potencial muito alto
+```
+
+A oportunidade não está necessariamente "dentro" da ideia.
+
+Ela pode surgir da configuração formada entre os elementos.
+
+---
+
+# 8. Outra distinção essencial: potencial não é resultado
+
+A OFE não deve ser confundida com uma equação de sucesso.
+
+O objeto principal da teoria é:
+
+```text
+POTENCIAL DE OPORTUNIDADE
+```
+
+e não:
+
+```text
+RESULTADO FINAL
+```
+
+Uma representação conceitual é:
+
+```text
+                    OFE
+                     ↓
+             potencial disponível
+                     ↓
+          exploração / execução
+                     ↓
+             resultado observado
+```
+
+Entre potencial e resultado existem diversos elementos:
+
+```text
+execução
+adoção
+distribuição
+recursos
+competição
+timing operacional
+decisões humanas
+eventos externos
+sorte
+```
+
+Portanto:
+
+```text
+alto OFE ≠ sucesso garantido
+```
+
+e:
+
+```text
+baixo OFE ≠ impossibilidade absoluta
+```
+
+Isso é importante porque impede que a teoria seja interpretada simplesmente como um "score de previsão de sucesso".
+
+---
+
+# 9. Interações podem ser mais importantes que características isoladas
+
+Uma das hipóteses que ganhou força durante o estudo é que simplesmente somar características pode não representar adequadamente a formação de oportunidades.
+
+Considere:
+
+```text
+A = demanda
+B = tecnologia
+C = distribuição
+```
+
+É possível que:
+
+```text
+A sozinho → efeito pequeno
+B sozinho → efeito pequeno
+C sozinho → efeito pequeno
+```
+
+mas:
+
+```text
+A + B + C → efeito muito maior
+```
+
+Isso representa uma interação.
+
+Em forma simplificada:
+
+```text
+efeito(A × B)
+efeito(A × C)
+efeito(B × C)
+```
+
+e possivelmente:
+
+```text
+efeito(A × B × C)
+```
+
+Esse ponto ainda não foi demonstrado empiricamente pela OFE, mas tornou-se uma das hipóteses estruturais mais importantes do modelo.
+
+---
+
+# 10. A teoria passou a admitir não linearidade
+
+A possibilidade de interações leva a outra questão:
+
+> O potencial de oportunidade pode mudar de forma não linear?
+
+É possível que determinadas características tenham pouco efeito até que um limite seja atingido.
+
+Exemplo conceitual:
+
+```text
+condição
+  │
+  │
+  │               ┌────────
+  │              /
+  │             /
+  │____________/
+  └────────────────────→
+```
+
+Nesse caso, pequenas mudanças podem inicialmente parecer irrelevantes e, depois de determinado ponto, provocar um grande aumento no potencial.
+
+Isso abre a possibilidade de:
+
+```text
+limiares
+pontos de transição
+efeitos de saturação
+efeitos de combinação
+mudanças abruptas
+```
+
+Mas esse comportamento ainda é uma hipótese a ser testada.
+
+---
+
+# 11. O contexto pode conter relações causais ou funcionais
+
+Outra consequência importante da estrutura atual é que as variáveis não precisam ser apenas uma lista de atributos.
+
+O contexto pode ser representado como uma rede de dependências:
+
+```text
+tecnologia
+    ↓
+custo
+    ↓
+viabilidade
+    ↓
+adoção
+
+concorrência
+    ↓
+diferenciação necessária
+    ↓
+potencial
+```
+
+Ou de forma mais abstrata:
+
+```text
+C = g(c1, c2, ..., cn)
+```
+
+e:
+
+```text
+I = h(i1, i2, ..., im)
+```
+
+Então a própria OFE pode ser entendida como uma função sobre duas estruturas que também possuem estrutura interna:
+
+```text
+OFE(h(i1,...,im), g(c1,...,cn), t)
+```
+
+Isso sugere uma arquitetura matemática muito mais rica do que uma simples soma ponderada.
+
+---
+
+# 12. Estado das principais hipóteses
+
+O estudo possui hoje diferentes níveis de confiança.
+
+## H1 — Oportunidade depende do contexto
+
+**Estado: forte hipótese conceitual**
+
+A ideia de que o contexto altera o potencial de uma oportunidade é o elemento mais consolidado da teoria.
+
+Ainda falta transformá-la em uma relação mensurável e testável de forma sistemática.
+
+---
+
+## H2 — O momento importa
+
+**Estado: forte hipótese conceitual**
+
+O mesmo projeto pode apresentar potenciais diferentes em momentos diferentes.
+
+O que ainda falta descobrir é como representar o tempo corretamente e quais mudanças temporais possuem maior efeito.
+
+---
+
+## H3 — Ideia e contexto são estruturas, não variáveis simples
+
+**Estado: consolidação estrutural do modelo**
+
+Esta é uma consequência importante da evolução do estudo.
+
+A formulação atual trabalha naturalmente com conjuntos, vetores, funções ou estruturas compostas.
+
+O próximo desafio é definir qual representação matemática é realmente mais útil.
+
+---
+
+## H4 — Interações entre características são fundamentais
+
+**Estado: hipótese forte, ainda não demonstrada**
+
+Existe uma motivação conceitual clara para esperar efeitos de interação.
+
+Porém, ainda não temos evidência empírica suficiente para afirmar:
+
+```text
+"interações são indispensáveis"
+```
+
+nem para determinar quais interações são mais importantes.
+
+---
+
+## H5 — A formação de oportunidades pode ser não linear
+
+**Estado: hipótese em aberto**
+
+Limiar, saturação e mudanças abruptas são possibilidades compatíveis com a teoria.
+
+Ainda não sabemos se são características gerais da formação de oportunidades ou apenas fenômenos presentes em determinados domínios.
+
+---
+
+## H6 — Oportunidades podem surgir sem mudança na ideia
+
+**Estado: consequência conceitual forte**
+
+Se o contexto e o momento fazem parte da função, então uma alteração no contexto pode alterar o OFE mesmo mantendo `I` aproximadamente constante.
+
+A questão em aberto é medir essa dinâmica em casos reais.
+
+---
+
+## H7 — A teoria poderá ter capacidade preditiva
+
+**Estado: completamente em aberto**
+
+Ainda não foi demonstrado que uma implementação matemática da OFE consegue prever oportunidades futuras melhor do que métodos existentes ou avaliações humanas.
+
+Esse é um dos testes mais importantes para o futuro da teoria.
+
+---
+
+# 13. O que realmente foi descoberto até agora?
+
+É importante separar **descoberta**, **hipótese** e **possibilidade futura**.
+
+## Descobertas/conclusões conceituais mais consolidadas
+
+```text
+1. Uma ideia isolada é uma representação incompleta da oportunidade.
+
+2. O contexto precisa fazer parte do modelo.
+
+3. O tempo não deve ser tratado apenas como uma data.
+
+4. "Ideia" e "contexto" podem ser estruturas compostas.
+
+5. Essas estruturas podem conter variáveis, relações e funções internas.
+
+6. O potencial de oportunidade é diferente do resultado realizado.
+
+7. A mesma ideia pode apresentar potenciais diferentes em diferentes configurações.
+
+8. A formulação OFE(I, C, t) é mais útil como estrutura geral do que como fórmula final.
+```
+
+## Hipóteses que ganharam importância
+
+```text
+- interações entre características;
+- não linearidade;
+- limiares;
+- dinâmica temporal;
+- estruturas hierárquicas;
+- possibilidade de emergência de potencial a partir de combinações.
+```
+
+## Coisas que ainda não foram demonstradas
+
+```text
+- a forma exata de f;
+- os pesos das variáveis;
+- quais variáveis são necessárias;
+- quais interações realmente importam;
+- se existem limiares gerais;
+- como medir o OFE;
+- se o modelo pode prever oportunidades;
+- em quais domínios a teoria funciona melhor.
+```
+
+---
+
+# 14. O grande problema atual: descobrir a função `f`
+
+Toda a teoria converge atualmente para uma pergunta:
+
+```text
+O que é f?
+```
+
+Sabemos a estrutura geral:
+
+```text
+OFE(I, C, t) = f(I, C, t)
+```
+
+Mas não sabemos qual é a forma correta de `f`.
+
+Algumas possibilidades são:
+
+```text
+f = soma ponderada
+```
+
+ou:
+
+```text
+f = função não linear
+```
+
+ou:
+
+```text
+f = modelo probabilístico
+```
+
+ou:
+
+```text
+f = rede de relações
+```
+
+ou:
+
+```text
+f = sistema dinâmico
+```
+
+ou uma combinação dessas abordagens.
+
+A teoria não precisa escolher uma dessas possibilidades por preferência estética.
+
+A escolha deve surgir dos testes.
+
+---
+
+# 15. O que ainda precisamos descobrir sobre `I`
+
+Também precisamos determinar quais propriedades de uma ideia realmente importam.
+
+Uma estrutura inicial poderia conter:
+
+```text
+I = {
+    utilidade,
+    custo,
+    viabilidade,
+    diferenciação,
+    complexidade,
+    recursos,
+    escalabilidade,
+    distribuição,
+    público
+}
+```
+
+Mas isso não significa que todas tenham o mesmo peso.
+
+Precisamos descobrir:
+
+```text
+quais variáveis importam;
+quais são redundantes;
+quais dependem de outras;
+quais apenas importam em determinados contextos;
+quais podem ser ignoradas.
+```
+
+É possível inclusive que não exista um conjunto universal de características.
+
+Nesse caso:
+
+```text
+I_domínio1 ≠ I_domínio2
+```
+
+pode ser uma propriedade legítima do modelo.
+
+---
+
+# 16. O que ainda precisamos descobrir sobre `C`
+
+O mesmo problema aparece no contexto.
+
+É impossível simplesmente listar "todas" as características do mundo.
+
+Precisamos descobrir qual é a estrutura mínima suficiente para representar o contexto relevante.
+
+Isso leva a uma pergunta profunda:
+
+> **Qual é a quantidade mínima de informação contextual necessária para explicar uma oportunidade?**
+
+Talvez:
+
+```text
+C = poucas variáveis fundamentais
+```
+
+seja suficiente em alguns domínios.
+
+Ou talvez:
+
+```text
+C = rede complexa de variáveis interdependentes
+```
+
+seja inevitável.
+
+Descobrir essa fronteira entre **simplificação útil** e **simplificação destrutiva** é um dos grandes problemas metodológicos do estudo.
+
+---
+
+# 17. O problema da medição
+
+Mesmo encontrando as variáveis, ainda existe outra dificuldade:
+
+> Como medir características que são parcialmente qualitativas?
+
+Por exemplo:
+
+```text
+"diferenciação" = ?
+
+"demanda" = ?
+
+"viabilidade" = ?
+
+"atratividade" = ?
+
+"maturidade tecnológica" = ?
+```
+
+Para transformar a teoria em modelo científico, precisamos de representações operacionais.
+
+Uma variável pode acabar sendo:
+
+```text
+escalar
+vetorial
+ordinal
+probabilística
+relacional
+temporal
+```
+
+A escolha da representação pode alterar profundamente o modelo.
+
+---
+
+# 18. O possível caráter dinâmico da OFE
+
+Se o contexto muda continuamente, talvez seja mais apropriado escrever:
+
+```text
+OFE(t) = f(I(t), C(t), t)
+```
+
+ou:
+
+```text
+dOFE/dt = ...
+```
+
+dependendo do tipo de modelo.
+
+Nesse cenário, oportunidades não são estados permanentes.
+
+Elas podem:
+
+```text
+nascer
+crescer
+atingir um pico
+diminuir
+desaparecer
+transformar-se
+```
+
+Uma oportunidade também pode gerar mudanças no próprio contexto.
+
+Isso introduz uma possibilidade ainda mais profunda:
+
+```text
+I + C
+ ↓
+OFE
+ ↓
+ação
+ ↓
+mudança em C
+ ↓
+novo OFE
+```
+
+Ou seja, a relação pode formar um ciclo de feedback.
+
+Esse ponto ainda é uma linha de investigação, não uma conclusão estabelecida.
+
+---
+
+# 19. Uma possível interpretação sistêmica
+
+Com a evolução do modelo, a OFE começou a se aproximar de uma visão sistêmica:
+
+```text
+IDEIA
+  │
+  ├────────────┐
+  │            │
+  ▼            ▼
+CARACTERÍSTICAS  CONTEXTO
+  │            │
+  └──────┬─────┘
+         ▼
+     INTERAÇÃO
+         │
+         ▼
+       OFE
+         │
+         ▼
+      AÇÃO
+         │
+         ▼
+   NOVO CONTEXTO
+         │
+         └──────────→ novo OFE
+```
+
+Essa interpretação pode explicar por que oportunidades podem ser fenômenos dinâmicos e emergentes.
+
+Mas ainda precisamos descobrir se essa estrutura sistêmica é realmente necessária ou se um modelo muito mais simples já explica os dados.
+
+---
+
+# 20. O que a OFE ainda não é
+
+É importante registrar também o que o estudo **não demonstrou**.
+
+A OFE ainda não é:
+
+```text
+✗ uma fórmula matemática validada;
+✗ um algoritmo comprovadamente preditivo;
+✗ um score universal de ideias;
+✗ uma teoria empiricamente estabelecida;
+✗ uma prova de que oportunidades sempre "emergem";
+✗ uma garantia de sucesso de projetos.
+```
+
+Ela é, neste estágio:
+
+```text
+uma estrutura teórica em desenvolvimento
+```
+
+com uma hipótese central bem definida e um conjunto crescente de consequências e perguntas testáveis.
+
+---
+
+# 21. O próximo salto: sair da formulação conceitual
+
+A próxima fase precisa mudar o tipo de investigação.
+
+Até agora, grande parte do progresso ocorreu na definição do problema e na estruturação conceitual.
+
+O próximo salto é experimental.
+
+Precisamos construir modelos simples e verificar seu comportamento.
+
+Por exemplo:
+
+```text
+Modelo A
+OFE = soma ponderada
+
+Modelo B
+OFE = soma + interações
+
+Modelo C
+OFE = função não linear
+
+Modelo D
+OFE = modelo dinâmico
+```
+
+Depois:
+
+```text
+comparar
+↓
+observar
+↓
+falsificar
+↓
+refinar
+```
+
+O objetivo não é escolher a fórmula mais bonita.
+
+É descobrir qual estrutura explica melhor o fenômeno.
+
+---
+
+# 22. O modelo mínimo
+
+Uma estratégia particularmente importante será construir uma OFE mínima.
+
+Por exemplo:
+
+```text
+I = {
+    utilidade,
+    custo
+}
+
+C = {
+    demanda,
+    concorrência
+}
+
+t = momento
+```
+
+e testar:
+
+```text
+OFE = f(utilidade, custo, demanda, concorrência, t)
+```
+
+Depois adicionar complexidade gradualmente.
+
+Isso permite descobrir:
+
+```text
+o que realmente é necessário;
+o que é redundante;
+quando a não linearidade aparece;
+quando as interações passam a importar;
+qual é a complexidade mínima do modelo.
+```
+
+Esse princípio é importante porque uma teoria precisa explicar complexidade sem assumir complexidade arbitrariamente desde o início.
+
+---
+
+# 23. Questões fundamentais ainda abertas
+
+As perguntas mais importantes neste momento são:
+
+### Estrutura
+
+```text
+Qual é a representação matemática mais adequada para I e C?
+```
+
+### Função
+
+```text
+Qual é a natureza de f?
+```
+
+### Interação
+
+```text
+Quais características realmente interagem?
+```
+
+### Não linearidade
+
+```text
+Existem limiares gerais na formação de oportunidades?
+```
+
+### Tempo
+
+```text
+Como representar adequadamente C(t), I(t) e OFE(t)?
+```
+
+### Medição
+
+```text
+Como transformar características reais em variáveis mensuráveis?
+```
+
+### Validação
+
+```text
+Como saber se uma previsão de OFE está correta?
+```
+
+### Generalização
+
+```text
+A mesma teoria funciona em diferentes tipos de oportunidade?
+```
+
+### Predição
+
+```text
+OFE consegue antecipar oportunidades que ainda não são óbvias?
+```
+
+---
+
+# 24. Estado atual da teoria
+
+A OFE pode ser resumida atualmente como:
+
+```text
+                OPORTUNIDADE
+                      │
+                      │
+               não é apenas
+                      │
+                      ▼
+                    IDEIA
+                      │
+                      │
+          depende da interação entre
+                      │
+          ┌───────────┴───────────┐
+          ▼                       ▼
+     IDEIA / I                CONTEXTO / C
+          │                       │
+          └───────────┬───────────┘
+                      │
+                     + t
+                      │
+                      ▼
+              FUNÇÃO / RELAÇÃO
+                      │
+                      ▼
+                    OFE
+                      │
+                      ▼
+            POTENCIAL DE OPORTUNIDADE
+```
+
+A estrutura que permanece como núcleo é:
+
+```text
+OFE(I, C, t) = f(I, C, t)
+```
+
+mas agora com:
+
+```text
+I = estrutura de características
+C = estrutura de características e relações
+t = estado temporal
+f = interação potencialmente não linear
+OFE = potencial de oportunidade
+```
+
+---
+
+# 25. Conclusão atual
+
+O estudo começou com uma pergunta relativamente simples:
+
+> **O que faz uma ideia se tornar uma oportunidade?**
+
+A investigação levou a uma resposta provisória, mas estruturalmente importante:
+
+> **Não parece suficiente olhar para a ideia isoladamente. O potencial de oportunidade depende da configuração formada pelas características da ideia, pelas características do contexto e pelo estado temporal em que ambos interagem.**
+
+A partir dessa conclusão, outras descobertas seguiram:
+
+```text
+ideias possuem estrutura;
+contextos possuem estrutura;
+estruturas podem conter outras estruturas;
+o tempo representa mudança de estado;
+interações podem ser fundamentais;
+o potencial não é o mesmo que o resultado;
+oportunidades podem ser dinâmicas;
+e a forma real de f ainda precisa ser descoberta.
+```
+
+Portanto, o estudo ainda não chegou à "fórmula da oportunidade".
+
+Chegou a algo anterior e talvez mais importante:
+
+> **uma definição mais precisa do problema que a fórmula precisa resolver.**
+
+O próximo estágio não é simplesmente adicionar mais variáveis.
+
+É descobrir **qual é a menor estrutura capaz de produzir, representar e eventualmente prever a formação de oportunidades**.
+
+---
+
+# Status do estudo
+
+```text
+Teoria:              Opportunity Formation Theory
+Sigla:               OFE
+
+Formulação-base:
+                     OFE(I, C, t) = f(I, C, t)
+
+Estado:
+                     teoria conceitual em desenvolvimento
+
+Principal descoberta:
+                     oportunidade como fenômeno relacional,
+                     contextual e temporal
+
+Avanço estrutural:
+                     I e C podem ser estruturas compostas,
+                     inclusive contendo funções e relações internas
+
+Hipótese mais forte:
+                     o potencial de oportunidade emerge da
+                     interação entre ideia, contexto e momento
+
+Hipóteses críticas:
+                     interações
+                     não linearidade
+                     dinâmica temporal
+                     limiares
+                     feedbacks
+
+Ainda desconhecido:
+                     forma de f
+                     variáveis mínimas
+                     método de medição
+                     pesos e interações
+                     validade empírica
+                     capacidade preditiva
+```
+
+> **A OFE está, neste momento, no ponto de transição entre uma teoria conceitual e um modelo matemático testável.**
+> 
